@@ -59,11 +59,12 @@ class DatepickerYearSelector extends React.Component {
 		const selectedValue = selectedValues[0]; // safe since we are working with a single selection
 
 		if (selectedValue) {
+			this.props.initialDateForCalendarRender.setFullYear(
+				parseInt(selectedValue.value, 10)
+			);
 			this.props.onChangeMonth(
 				new Date(
-					this.props.initialDateForCalendarRender.setFullYear(
-						parseInt(selectedValue.value, 10)
-					)
+					this.props.initialDateForCalendarRender
 				)
 			);
 		}
